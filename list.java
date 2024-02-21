@@ -1,0 +1,36 @@
+import java.util.*;
+class Emp
+{
+	int id;
+	String name;
+	double salary;
+	Emp (int id, String name, double salary)
+	{
+		this.id=id;
+		this.name=name;
+		this.salary=salary;
+	}
+}
+class  list
+{
+	public static void main(String[] args) 
+	{
+		List<Emp> list=new ArrayList<>();
+		Emp e1=new Emp (101,"anil",100000);
+		Emp e2=new Emp (102,"kumar",75000);
+		Emp e3=new Emp (103,"AK",60000);
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		System.out.println("Record is:");
+		for (Emp e:list)
+		{
+			System.out.println(e.id+","+e.name+","+e.salary);
+		}
+		for (int i=list.size()-1; i>=0; i--)
+		{
+			Emp e=list.get(i);
+			System.out.println(e.id+","+e.name+","+e.salary);
+		}
+	}
+}

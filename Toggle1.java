@@ -1,0 +1,17 @@
+class Toggle1 
+{
+	public static void main(String[] args) 
+	{
+		String s="ApPLe";
+		char [] str=s.toCharArray();
+		for (int i=0; i<str.length; i++)
+		{
+			if (Character.isAlphabetic(str[i]))
+			{
+				str[i] = (char)(str[i]^(1<<5));
+			}
+		}
+		System.out.println("String after toggle:"+"\n"+String.valueOf(str));
+
+	}
+}

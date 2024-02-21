@@ -1,0 +1,76 @@
+import java.util.*;
+class Emp
+{
+	private int id;
+	private String name;
+	private double salary;
+	public void setId(int id)
+	{
+		this.id=id;
+	}
+	public int getId()
+	{
+		return this.id;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public void setSalary(double salary)
+	{
+		this.salary=salary;
+	}
+	public double getSalary()
+	{
+		return this.salary;
+	}
+}
+class MyEmp 
+{
+	public static void main(String[] args) 
+	{
+		Map<Integer,Emp> map=new HashMap<Integer,Emp>();
+		Scanner sc=new Scanner(System.in);
+		while (true)
+		{
+			System.out.println("Enter id:");
+			int ids=sc.nextInt();
+			System.out.println("Enter name:");
+			String name=sc.next();
+			System.out.println("Enter salary:");
+			double salary=sc.nextDouble();
+			Emp e= new Emp();
+			e.setId(ids);
+			e.setName(name);
+			e.setSalary(salary);
+			map.put(ids,e);
+			System.out.println("Do You want to emp (y/n):");
+			char ch=sc.next().charAt(0);
+			if (ch=='n')
+			{
+				break;
+			}
+		}
+		System.out.println("Enter id to display details:");
+		int id=sc.nextInt();
+		if (map.containsKey(ids))
+		{
+			Emp e=map.get(ids);
+			System.out.println(e.getId()+","+e.getName()+","+e.getSalary());
+		}
+	    else
+		{
+		System.out.println("no such employee");
+		}
+		for (int i=ids.size-1; i>=0; i--)
+		{
+			Emp e=map.get(ids);
+			System.out.println(e.getId()+","+e.getName()+","+e.getSalary());
+		}
+	}
+
+}
